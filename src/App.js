@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import DefaultLayout from './container/Layouts/DefaultLayout';
+import AdminLayout from './container/Layouts/AdminLayout';
 import './App.scss';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (  
       <HashRouter>
         <Switch>
-          <Route path='/' name='home' component={DefaultLayout} />
+          <Route path='/' name='home' component={AdminLayout} />
         </Switch>
       </HashRouter>
     );

@@ -1,8 +1,7 @@
-// import React from 'react';
-import DefaultLayout from './container/Layouts/DefaultLayout';
+import AdminLayout from './container/Layouts/AdminLayout';
 
 const routes = [
-  {path: '/', name: 'Home', component: DefaultLayout, exact: true}
+  {path: '/', name: 'Home', component: AdminLayout, exact: true}
 ];
 
 export default routes;

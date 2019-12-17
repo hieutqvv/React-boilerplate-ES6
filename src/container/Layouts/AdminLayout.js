@@ -11,14 +11,15 @@ import {
   AppSidebarMinimizer,
   AppSidebarNav,
 } from '@coreui/react';
+
 // routes config
 import routes from '../../routes';
-import { navigation } from './DefaultNavigation';
+import { navigation } from './AdminNavigation';
 
-const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
-const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
+const AdminFooter = React.lazy(() => import('./AdminFooter'));
+const AdminHeader = React.lazy(() => import('./AdminHeader'));
 
-class DefaultLayoutContainer extends Component {
+class AdminLayoutContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -37,7 +38,7 @@ class DefaultLayoutContainer extends Component {
       <div className="app">
         <AppHeader fixed>
           <Suspense fallback={this.loading()}>
-            <DefaultHeader />
+            <AdminHeader />
           </Suspense>
         </AppHeader>
         <div className="app-body">
@@ -74,7 +75,7 @@ class DefaultLayoutContainer extends Component {
         </div>
         <AppFooter>
           <Suspense fallback={this.loading()}>
-            <DefaultFooter/>
+            <AdminFooter />
           </Suspense>
         </AppFooter>
       </div>  
@@ -82,4 +83,4 @@ class DefaultLayoutContainer extends Component {
   }
 }
 
-export default DefaultLayoutContainer
+export default AdminLayoutContainer

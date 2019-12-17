@@ -6,7 +6,7 @@ import {AppSidebarToggler} from '@coreui/react';
 import sygnet from '../../assets/img/brand/sygnet.svg';
 import avatar from '../../assets/avatars/4.jpg';
 
-class DefaultHeader extends Component {
+class AdminHeader extends Component {
   render() {
     return (
       <React.Fragment>
@@ -45,4 +45,4 @@ class DefaultHeader extends Component {
   }
 }
 
-export default DefaultHeader
+export default AdminHeader
