@@ -1,7 +1,8 @@
-import React, {Component, Suspense} from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
-import {Container} from 'reactstrap';
+import React, { Component, Suspense } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { Container } from 'reactstrap';
 import {
+  AppAside,
   AppFooter,
   AppHeader,
   AppSidebar,
@@ -16,8 +17,9 @@ import {
 import routes from '../../routes';
 import { navigation } from './AdminNavigation';
 
-const AdminFooter = React.lazy(() => import('./AdminFooter'));
+const AdminAside = React.lazy(() => import('./AdminAside'));
 const AdminHeader = React.lazy(() => import('./AdminHeader'));
+const AdminFooter = React.lazy(() => import('./AdminFooter'));
 
 class AdminLayoutContainer extends Component {
   constructor(props) {
@@ -72,6 +74,11 @@ class AdminLayoutContainer extends Component {
               </Suspense>
             </Container>
           </main>
+          <AppAside fixed>
+            <Suspense fallback={this.loading()}>
+              <AdminAside />
+            </Suspense>
+          </AppAside>
         </div>
         <AppFooter>
           <Suspense fallback={this.loading()}>
