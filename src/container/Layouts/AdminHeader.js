@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
-import {DropdownMenu, DropdownToggle, Nav, DropdownItem, UncontrolledDropdown} from 'reactstrap';
-import {Link} from 'react-router-dom';
+import { DropdownMenu, DropdownToggle, Nav, DropdownItem, UncontrolledDropdown } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-import {AppSidebarToggler} from '@coreui/react';
+import { AppAsideToggler, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
+import logo from '../../assets/img/brand/logo.svg';
 import sygnet from '../../assets/img/brand/sygnet.svg';
-import avatar from '../../assets/avatars/4.jpg';
+import avatar from '../../assets/img/avatars/4.jpg';
+
 
 class AdminHeader extends Component {
   render() {
     return (
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile/>
-        <span className="navbar-brand">
-        <img src={sygnet} width="32" height="35" alt="Core-ui app" />
-        <span>My CoreUI App</span>
-        </span>
+        <AppNavbarBrand
+          full={{ src: logo, width: 89, height: 25, alt: 'CoreUI Logo' }}
+          minimized={{ src: sygnet, width: 30, height: 30, alt: 'CoreUI Logo' }}
+        />
+        <AppSidebarToggler className="d-md-down-none" display="lg" />
         <Nav className="ml-auto" navbar>
           <UncontrolledDropdown nav direction="down">
             <DropdownToggle nav>
@@ -36,10 +39,12 @@ class AdminHeader extends Component {
                 transform: 'translate3d(-132px, 35px, 0px)'
               }}
             >
-              <DropdownItem tag={Link} to="/logout">Logout</DropdownItem>
+              <DropdownItem tag={Link} to="/logout"><i className="fa fa-lock"></i> Logout</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
+        <AppAsideToggler className="d-md-down-none" />
+        <AppAsideToggler className="d-lg-none" mobile />
       </React.Fragment>
     )
   }
